@@ -1,0 +1,17 @@
+syntax = "proto3";
+option go_package = "github.com/ruanlas/poc-grpc-go-app-pbuser/user";
+package user;
+
+message UserRequest {
+    string firstName = 1;
+    string lastName = 2;
+    uint32 age = 3;
+}
+
+message MessageResponse {
+    string message = 1;
+}
+
+service UserSender{
+    rpc Send (UserRequest) returns (MessageResponse) {}
+}
